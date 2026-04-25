@@ -11,6 +11,7 @@ return {
     },
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
+      'mfussenegger/nvim-dap',
       'saghen/blink.cmp',
     },
     opts = function()
@@ -18,7 +19,7 @@ return {
 
       -- Import the build automatically on first open so Metals does not keep
       -- prompting about the workspace before it has finished indexing.
-      metals_config.settings.autoImportBuild = 'initial'
+      metals_config.settings.automaticImportBuild = 'initial'
 
       -- Use the same completion capabilities as the rest of the LSP stack.
       local metals_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -32,6 +33,10 @@ return {
       -- for progress notifications, so there is no need to keep Metals on its older
       -- custom status bar default.
       metals_config.init_options.statusBarProvider = 'off'
+
+      metals_config.on_attach = function()
+        require('metals').setup_dap()
+      end
 
       return metals_config
     end,
