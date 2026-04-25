@@ -32,11 +32,4 @@ return {
       }
     end,
   },
-  {
-    'scalameta/nvim-metals',
-    ft = { 'scala', 'sbt', 'java' },
-    config = function()
-      require('metals').setup_dap()
-    end,
-  },
 }

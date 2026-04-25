@@ -23,16 +23,6 @@ return {
         desc = 'Debug: Step Over',
       },
       {
-        '<S-F8>',
-        function() require('dap').step_out() end,
-        desc = 'Debug: Step Out',
-      },
-      {
-        '<S-F5>',
-        function() require('dap').restart() end,
-        desc = 'Debug: Restart',
-      },
-      {
         '<leader>db',
         function() require('dap').toggle_breakpoint() end,
         desc = 'Debug: Toggle Breakpoint',
