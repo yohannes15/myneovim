@@ -359,10 +359,6 @@ require('lazy').setup({
         -- installed and loaded.
         cond = function() return vim.fn.executable 'make' == 1 end,
       },
-      -- telescope-ui-select.nvim REPLACES vim.ui.select with a fuzzy `>` prompt (Insert mode).
-      -- That breaks many LSP/METALS prompts (Scalafmt, etc.): j/k move the file buffer, not the list.
-      -- Use Neovim's default vim.ui.select instead (numbered list, 1/2/3 + Enter works).
-      -- { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -403,7 +399,6 @@ require('lazy').setup({
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
-      -- pcall(require('telescope').load_extension, 'ui-select') -- disabled: see dependency note above
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
