@@ -54,7 +54,31 @@ return {
         dependencies = {
           'nvim-neotest/nvim-nio',
         },
-        opts = {},
+        ---@type dapui.Config
+        opts = {
+          layouts = {
+            {
+              elements = {
+                { id = 'scopes', size = 0.25 },
+                { id = 'breakpoints', size = 0.25 },
+                { id = 'stacks', size = 0.25 },
+                { id = 'watches', size = 0.25 },
+              },
+              size = 0.15,
+              position = 'left',
+            },
+            {
+              -- Bottom strip: default `size = 10` is only 10 lines (very tight).
+              -- Use a fraction of editor height; split width so REPL gets most room.
+              elements = {
+                { id = 'repl', size = 0.65 },
+                { id = 'console', size = 0.35 },
+              },
+              size = 0.25,
+              position = 'bottom',
+            },
+          },
+        },
       },
     },
     config = function()
@@ -65,13 +89,8 @@ return {
         dapui.open()
       end
 
-      dap.listeners.before.event_terminated['dapui_config'] = function()
-        dapui.close()
-      end
-
-      dap.listeners.before.event_exited['dapui_config'] = function()
-        dapui.close()
-      end
+      -- Leave UI open when the session ends; close with `<leader>du` (or re-add
+      -- before.event_terminated / before.event_exited → dapui.close() for auto-close).
 
       require('plugins.dap_scala').register(dap)
       -- e.g. later: require('plugins.dap_python').register(dap)
