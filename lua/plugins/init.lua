@@ -11,6 +11,7 @@ return {
   unpack(require 'plugins.trouble'),
   unpack(require 'plugins.auto_save'),
   unpack(require 'plugins.blink'),
+  unpack(require 'plugins.autopairs'),
   unpack(require 'plugins.dap'),
   unpack(require 'plugins.dap_scala'),
   unpack(require 'plugins.nvim_metals'),
