@@ -20,6 +20,6 @@ return {
       lazy = '💤 ',
     },
   },
-  -- almost no Kickstart plugins need it.
+  -- Most plugins don't need it.
   rocks = { enabled = false },
 }
