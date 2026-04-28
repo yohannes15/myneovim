@@ -17,6 +17,12 @@ return {
     ---@module 'neo-tree'
     ---@type neotree.Config
     opts = {
+      -- Neo-tree maps <Space> to toggle_node; that blocks <Space> as mapleader while focused.
+      window = {
+        mappings = {
+          ['<space>'] = 'none',
+        },
+      },
       filesystem = {
         window = {
           mappings = {
