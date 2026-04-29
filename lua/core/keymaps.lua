@@ -34,6 +34,19 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 
+-- [[ Custom Keymaps ]]
+
+-- Use 'jk' to exit insert mode
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode with jk' })
+
+-- Stay in visual mode after indenting
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and stay in visual mode' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and stay in visual mode' })
+
+-- Move lines up and down in visual mode
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
