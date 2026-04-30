@@ -19,10 +19,6 @@ return {
       -- Terminal
       { "<C-\\>", function() Snacks.terminal.toggle() end, desc = "Toggle Terminal", mode = { "n", "t" } },
 
-      -- Notifications
-      { "<leader>un", function() Snacks.notifier.hide() end, desc = "[U]n-show (Dismiss) Notifications" },
-      { "<leader>sh", function() Snacks.notifier.show_history() end, desc = "[S]earch [H]istory (Notifications)" },
-
       -- Buffers
       { "<leader>bd", function() Snacks.bufdelete() end, desc = "[B]uffer [D]elete" },
 
