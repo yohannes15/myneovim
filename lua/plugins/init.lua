@@ -19,6 +19,7 @@ return {
   unpack(require 'plugins.colorscheme'),
   unpack(require 'plugins.mini'),
   unpack(require 'plugins.treesitter'),
+  unpack(require 'plugins.render_markdown'),
 
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
