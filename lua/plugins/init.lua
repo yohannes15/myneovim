@@ -5,7 +5,7 @@ return {
   unpack(require 'plugins.guess_indent'),
   unpack(require 'plugins.gitsigns'),
   unpack(require 'plugins.which_key'),
-  unpack(require 'plugins.neo_tree'),
+  unpack(require 'plugins.oil'),
   unpack(require 'plugins.lsp'),
   unpack(require 'plugins.conform'),
   unpack(require 'plugins.trouble'),
