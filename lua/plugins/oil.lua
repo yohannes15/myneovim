@@ -18,6 +18,7 @@ return {
       keymaps = {
         ['<C-v>'] = { 'actions.select', opts = { vertical = true }, desc = 'Open the selection in a vertical split' },
         ['<C-x>'] = { 'actions.select', opts = { horizontal = true }, desc = 'Open the selection in a horizontal split' },
+        ['gS'] = 'actions.change_sort',
       },
       -- Set to false to disable all of the above keymaps
       use_default_keymaps = true,

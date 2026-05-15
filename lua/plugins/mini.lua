@@ -6,13 +6,21 @@ return {
       --  - va)  - [V]isually select [A]round [)]parenthenses
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
       --  - ci'  - [C]hange [I]nside [']quote
-      -- require('mini.ai').setup { n_lines = 500 }
+      require('mini.ai').setup { n_lines = 500 }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]parentheses
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
-      -- require('mini.surround').setup()
+      -- Using 'gs' prefix to avoid conflict with flash.nvim 's'
+      require('mini.surround').setup {
+        mappings = {
+          add = 'gsa', -- Add surrounding in Normal and Visual modes
+          delete = 'gsd', -- Delete surrounding
+          find = 'gsf', -- Find surrounding (to the right)
+          find_left = 'gsF', -- Find surrounding (to the left)
+          highlight = 'gsh', -- Highlight surrounding
+          replace = 'gsr', -- Replace surrounding
+          update_n_lines = 'gsn', -- Update `n_lines`
+        },
+      }
 
       -- Simple and easy statusline.
       local statusline = require 'mini.statusline'
