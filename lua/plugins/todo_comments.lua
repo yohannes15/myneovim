@@ -11,10 +11,10 @@ return {
         '<cmd>TodoTrouble<cr>',
         desc = '[T]rouble TODO comments',
       },
-      -- Telescope picker; inherits `<C-t>` → Trouble from `lua/plugins/telescope.lua`.
+      -- Snacks picker; inherits `<C-t>` → Trouble from `Snacks.picker` configuration.
       {
         '<leader>st',
-        '<cmd>TodoTelescope<cr>',
+        function() Snacks.picker.todo_comments() end,
         desc = '[S]earch [T]ODO comments',
       },
       {
